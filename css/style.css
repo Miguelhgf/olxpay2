@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+.topo {
+  background: #8000ff;
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.topo h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.saldo {
+  text-align: center;
+  background: #8000ff;
+  color: white;
+  padding: 30px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.saldo h2 {
+  font-size: 32px;
+  margin: 5px 0 0 0;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 10px;
+}
+
+.btn-acao {
+  background: #ff9900;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-acao i {
+  margin-bottom: 5px;
+}
+
+.btn-acao span {
+  font-size: 10px;
+}
+
+.historico {
+  padding: 20px 10px;
+}
+
+.historico h3 {
+  margin-bottom: 10px;
+}
+
+.item-historico {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item-historico i {
+  color: #8000ff;
+  margin-right: 10px;
+}
+
+.item-historico div {
+  flex-grow: 1;
+}
+
+.item-historico small {
+  color: gray;
+  font-size: 12px;
+}
+body {
+

